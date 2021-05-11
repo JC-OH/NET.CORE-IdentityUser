@@ -1,4 +1,5 @@
 using IU.Data;
+using IU.Data.Auth;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -34,7 +35,7 @@ namespace UI.MVC
             //services.AddDefaultIdentity<IdentityUser>()
             //      .AddRoles<IdentityRole>()
             //      .AddEntityFrameworkStores<UIDbContext>();
-            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<UIDbContext>();
+            services.AddDefaultIdentity<ApplicationUser>().AddEntityFrameworkStores<UIDbContext>();
 
             services.Configure<IdentityOptions>(options =>
             {
