@@ -47,7 +47,13 @@ namespace UI.MVC
                 options.Password.RequiredLength = 6;
                 options.Password.RequiredUniqueChars = 1;
             });
-
+            //Claims-based
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdministratorOnly", policy => policy.RequireRole("Administrator"));
+                options.AddPolicy("DeleteUser", policy => policy.RequireClaim("Delete User", "Delete User"));
+                options.AddPolicy("AddUser", policy => policy.RequireClaim("Add User", "Add User"));
+            });
 
             services.AddControllersWithViews();
 
