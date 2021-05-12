@@ -35,7 +35,10 @@ namespace UI.MVC
             //services.AddDefaultIdentity<IdentityUser>()
             //      .AddRoles<IdentityRole>()
             //      .AddEntityFrameworkStores<UIDbContext>();
-            services.AddDefaultIdentity<ApplicationUser>().AddEntityFrameworkStores<UIDbContext>();
+            /*services.AddDefaultIdentity<ApplicationUser>().AddEntityFrameworkStores<UIDbContext>();*/
+            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<UIDbContext>();
 
             services.Configure<IdentityOptions>(options =>
             {

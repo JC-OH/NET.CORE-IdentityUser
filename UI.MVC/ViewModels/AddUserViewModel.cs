@@ -5,9 +5,9 @@ namespace UI.MVC.ViewModels
 {
     public class AddUserViewModel
     {
-        /*[Required]
+        [Required]
         [Display(Name = "User name")]
-        public string UserName { get; set; }*/
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.EmailAddress)]
@@ -19,7 +19,7 @@ namespace UI.MVC.ViewModels
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-/*        [Required(ErrorMessage = "Please enter the birth date")]
+        [Required(ErrorMessage = "Please enter the birth date")]
         [Display(Name = "Birth date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -27,6 +27,6 @@ namespace UI.MVC.ViewModels
 
         public string City { get; set; }
 
-        public string Country { get; set; }*/
+        public string Country { get; set; }
     }
 }
